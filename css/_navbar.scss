@@ -1,0 +1,55 @@
+@mixin flexDirection($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+nav {
+    .menu {
+        @include flexDirection(row);
+
+        margin-bottom: 0;
+        font-size: 0;
+        
+        li {
+            line-height: 34px;
+            margin-left: 15px;
+            font-family: $secondary-font;
+            font-size: 24px;
+            text-align: center;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            a {
+                color: $nav-color;
+                text-decoration: none;
+
+                &:hover, &.active {
+                    color: $nav-color-hover;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive layout */
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    nav {
+        .menu {
+            @include flexDirection(column);
+
+            li {
+                margin-left: 0;
+            }
+        }
+    }
+}

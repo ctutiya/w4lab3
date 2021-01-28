@@ -1,0 +1,9 @@
+@mixin bgTheme($theme) {
+    @if $theme == dark {
+        background-color: $secondary-color;
+        color: $light-text-color;
+	} @else {
+		background-color: $terciary-color;
+        color: $dark-text-color;
+	}
+}
